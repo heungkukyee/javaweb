@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"><!--bootstrap 반응형-->
         <meta name="Yu Jang Keon" content="20221000">
         <meta name="수업시간 실습입니다." content="computer">
-        <base href="http://127.0.0.1:5500"><!--페이지 주소 설정-->
+        <base href="http://127.0.0.1:5500">
         <!--표 스타일 지정-->
         <style>         
             table {
@@ -15,25 +15,29 @@
                 color: white;
             }
         </style>
-        <!--표 스타일 지정 끝-->
+       
         <title> LOL 메인화면</title>
+        <!--js 연동-->
+        <script type="text/javascript" src="js/js_test.js"></script>
+        <script type="text/javascript" defer src="js/js_search.js"></script> <!--defer 추가-->
+        <script type="text/javascript" defer src="js/js_popup.js"></script>
         <!--bootsrap-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </head>
-    <!--header-->
-    <body style="background-color: black;">
+   
+    <body style="background-color: black;" onload="pop_up();">
         <div class="container-fluid" style="display: flex; justify-content: center;">
             <!--<img src="javaweb 기본연습/image/logo.jpg" width="200" height="60">
             <h3 style="font-size: 24px; font-weight: bold; font-style: italic; color: white;">
                 게임정보   
                 <a href="https://www.leagueoflegends.com/ko-kr/" target="_blank">기본정보</a> 
                 챔피언  패치노트    새소식 등 (메뉴 정보 입력하기)-->
-        <!--네비게이션 바-->
+        
         <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
           <div class="container-fluid">
             <a class="navbar-brand" href="http://127.0.0.1:5500">
               <img src="javaweb 기본연습/image/logo.jpg" alt="Logo" width="200" height="60" class="d-inline-block align-text-top">
-              <!--네비게이션 바 텍스트-->
             </a>
             <a class="navbar-brand" href="http://127.0.0.1:5500">홈페이지 테스트</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,24 +72,24 @@
                   </ul>
                 </li>
               </ul>
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="입력" aria-label="Search">
-                <button class="btn btn-outline-light" type="submit">검색</button>
+              <form class="d-flex" role="search" onsubmit="return googleSearch();"> <!--onsubmit 추가-->
+                <input class="form-control me-2" id="search_input" name="q" type="search" placeholder="입력" aria-label="Search"> <!--코드 추가-->
+                <button class="btn btn-outline-light" id="search_btn" type="submit">검색</button> <!--id="search_btn 추가"-->
               </form>
             </div>
           </div>
         </nav>
         </div>
-        <!--header end-->
+        
         <hr>
-        <!--article-->
+        
         <div class="container-fluid" style="display: flex; justify-content: center;">
             <a href="index.html" target="_blank">
             <img src="javaweb 기본연습/image/MAIN.jpg"  class="img-fluid" width="1200" height="800">
             </a>
         </div>
         
-        <div style="display: flex; justify-content: center;"><!--표 내용-->
+        <div style="display: flex; justify-content: center;">
             <table class="table table-bordered" border="3"> <!--class="table table-bordered" 를 추가하면 부트스트랩 표로 적용(표 선은 보이지만 색상 적용X)-->
                 <caption>인기 캐릭터</caption>
                 <thead>
@@ -124,14 +128,15 @@
                 </tbody>
             </table>
         </div>
-        <!--article end-->
+        
         <hr>
-        <!--fotter-->
+        
         <div  class="container-fluid" style="display: flex; justify-content: center;">
             <h3 style="font-size: 24px; font-weight: bold; font-style: italic; color: white; font-family: '굴림';">
                 라이엇 게임 회사 정보 2024년 X월 작성됨</h3>
         </div>
-        <!--fotter end-->
+        
+
         <!--bootstrap-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
