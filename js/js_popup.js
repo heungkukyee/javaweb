@@ -26,6 +26,7 @@ function show_clock(){
     setTimeout(show_clock, 1000); //1초마다 갱신
 }
 
+//이미지 호버 함수
 function over(obj) {
     obj.src="image/logo.jpg";
 }
