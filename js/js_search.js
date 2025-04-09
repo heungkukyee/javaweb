@@ -34,7 +34,7 @@ function googleSearch() {
     const badwords = ["욕1", "욕2", "욕3", "욕4", "욕5"]; //비속어 구분
 
     //공백 문자열 검사
-    if (searchTerm.length === 0) {
+    if (searchTerm.length == 0) {
         alert("검색창이 비었습니다.");
         return false;
     }
