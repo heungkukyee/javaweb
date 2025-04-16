@@ -6,10 +6,17 @@ function search_message(){
     }
 */
 
+/*
 function search_message(){
     let message = "검색을 수행합니다."; //message 변수 선언하고 변수에 문자열 저장
     alert(message); //변수 선언
     }
+*/    
+
+const search_message = () => {
+    const c = "검색을 수행합니다.";
+    alert(c);
+};    
 
 /*
 function search_message(){

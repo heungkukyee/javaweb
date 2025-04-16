@@ -27,6 +27,7 @@ function show_clock(){
 }
 
 //이미지 호버 함수
+/*
 function over(obj) {
     obj.src="image/logo.jpg";
 }
@@ -34,3 +35,12 @@ function over(obj) {
 function out(obj) {
     obj.src="image/logo2.jpg";
 }
+*/
+
+const over = (obj) => {
+    obj.src = "image/logo.jpg"
+};
+
+const out = (obj) => {
+    obj.src = "image/logo2.jpg"
+};
