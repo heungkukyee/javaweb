@@ -6,17 +6,18 @@ function search_message(){
     }
 */
 
-/*
+// 호이스팅 사용하려고 일반 함수 사용
 function search_message(){
     let message = "검색을 수행합니다."; //message 변수 선언하고 변수에 문자열 저장
     alert(message); //변수 선언
-    }
-*/    
+    }   
 
+/* 호이스팅 때문에 화살표 함수 사용 불가(이벤트 등록을 밑으로 내려야 쓸 수 있음.)
 const search_message = () => {
     const c = "검색을 수행합니다.";
     alert(c);
-};    
+};
+*/    
 
 /*
 function search_message(){
