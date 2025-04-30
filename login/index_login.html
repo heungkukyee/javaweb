@@ -8,6 +8,7 @@
         <meta name="Yu Jang Keon" content="20221000">
         <meta name="수업시간 실습입니다." content="computer">
         <base href="http://127.0.0.1:5500">
+
         <!--표 스타일 지정-->
         <style>         
             table {
@@ -15,13 +16,11 @@
                 color: white;
             }
         </style>
-       
+
         <title> LOL 메인화면</title>
+
         <!--js 연동-->
-        <script type="text/javascript" src="js/js_test.js"></script>
         <script type="text/javascript" defer src="js/js_search.js"></script>
-        <script type="text/javascript" defer src="js/js_popup.js"></script>
-        <script type="text/javascript" defer src="js/js_data_type.js"></script>
         <!--bootsrap-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -75,13 +74,13 @@
             <a href="login/logout.html" class="btn btn-outline-light ms-2 text-nowrap" id="logout_btn">로그아웃</a> <!-- 로그아웃 버튼 추가-->
           </nav>
 
-        <div class="container-fluid" style="display: flex; justify-content: center;">
-            <!--<img src="javaweb 기본연습/image/logo.jpg" width="200" height="60">
+        <!-- <div class="container-fluid" style="display: flex; justify-content: center;">
+            <img src="javaweb 기본연습/image/logo.jpg" width="200" height="60">
             <h3 style="font-size: 24px; font-weight: bold; font-style: italic; color: white;">
                 게임정보   
                 <a href="https://www.leagueoflegends.com/ko-kr/" target="_blank">기본정보</a> 
-                챔피언  패치노트    새소식 등 (메뉴 정보 입력하기)-->
-        </div>
+                챔피언  패치노트    새소식 등 (메뉴 정보 입력하기)
+        </div> -->
         
         <hr>
         
@@ -95,37 +94,40 @@
             <table class="table table-bordered" border="3"> <!--class="table table-bordered" 를 추가하면 부트스트랩 표로 적용(표 선은 보이지만 색상 적용X)-->
                 <caption>인기 캐릭터</caption>
                 <thead>
-                  <tr class="table-primary">
-                    <th scope="col">#</th>
-                    <th scope="col">1</th>
-                    <th scope="col">2</th>
-                    <th scope="col">3</th>
-                    <th scope="col">4</th>
-                    <th scope="col">5</th>
-                  </tr>
+                    <tr class="table-primary">
+                        <th scope="col">#</th>
+                        <th scope="col">1</th>
+                        <th scope="col">2</th>
+                        <th scope="col">3</th>
+                        <th scope="col">4</th>
+                        <th scope="col">5</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr class="table-secondary">
-                      <th  scope="row">1</th>
-                        <td width="200" >사이온</td>
+                        <th scope="row">1</th>
+                        <td width="200">사이온</td>
                         <td width="250">아리</td>
                         <td width="300">가렌</td>
                         <td>가렌2</td>
                         <td>가렌3</td>
                     </tr>
                     <tr class="table-success">
-                      <th scope="row">공백</th>
+                        <th scope="row">공백</th>
                         <td colspan="5"><a href="https://www.leagueoflegends.com/ko-kr/" target="_blank">
-                            롤 웹사이트 접속하기</a></td>
+                                롤 웹사이트 접속하기</a></td>
                     </tr>
                     <tr class="table-danger">
-                      <th scope="row">2</th>
+                        <th scope="row">2</th>
                         <td height="100"><b>카직스</b></td>
                         <td>루시안</td>
                         <td>루시안2</td>
-                        <td colspan="2"><font size="13">
-                            <img src="image/vi.jpg" width="50" height="100">
-                            바이1, 2</font></td>
+                        <td colspan="2">
+                            <font size="13">
+                                <img src="image/vi.jpg" width="50" height="100">
+                                바이1, 2
+                            </font>
+                        </td>
                     </tr>
                 </tbody>
             </table>
