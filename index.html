@@ -19,7 +19,7 @@
         <title> LOL 메인화면</title>
         <!--js 연동-->
         <script type="text/javascript" src="js/js_test.js"></script>
-        <script type="text/javascript" defer src="js/js_search.js"></script> <!--defer 추가-->
+        <script type="text/javascript" defer src="js/js_search.js"></script>
         <script type="text/javascript" defer src="js/js_popup.js"></script>
         <script type="text/javascript" defer src="js/js_data_type.js"></script>
         <!--bootsrap-->
@@ -28,61 +28,61 @@
     </head>
    
     <body style="background-color: black;" onload="pop_up();">
+      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://127.0.0.1:5500">
+            <img src="image/logo.jpg" alt="Logo" width="200" height="60" class="d-inline-block align-text-top" onmouseover="over(this)" onmouseout="out(this)">
+          </a>
+          <a class="navbar-brand" href="http://127.0.0.1:5500">홈페이지 테스트</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="https://www.leagueoflegends.com/ko-kr/" target="_blank">메인페이지</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">기본정보</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">챔피언</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">패치노트</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">새소식</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  고객지원
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://www.leagueoflegends.com/ko-kr/download/" target="_blank">게임 다운로드</a></li>
+                  <li><a class="dropdown-item" href="https://www.leagueoflegends.com/ko-kr/news/community/" target="_blank">롤 커뮤니티</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="https://github.com/heungkukyee?tab=repositories" target="">깃허브 페이지</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex" role="search" onsubmit="return googleSearch();"> <!--onsubmit 추가-->
+              <input class="form-control me-2" id="search_input" name="q" type="search" placeholder="입력" aria-label="Search"> <!--코드 추가-->
+              <button class="btn btn-outline-light ms-2 text-nowrap" id="search_button_msg" type="submit">검색</button> <!--id="search_btn 추가"-->
+            </form>
+            
+          </div>
+          
+        </div>
+        <a href="login/login.html" class="btn btn-outline-light ms-2 text-nowrap" id="login_btn">로그인</a> <!--로그인 버튼 추가-->
+      </nav>
+
         <div class="container-fluid" style="display: flex; justify-content: center;">
             <!--<img src="javaweb 기본연습/image/logo.jpg" width="200" height="60">
             <h3 style="font-size: 24px; font-weight: bold; font-style: italic; color: white;">
                 게임정보   
                 <a href="https://www.leagueoflegends.com/ko-kr/" target="_blank">기본정보</a> 
                 챔피언  패치노트    새소식 등 (메뉴 정보 입력하기)-->
-        
-        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="http://127.0.0.1:5500">
-              <img src="image/logo.jpg" alt="Logo" width="200" height="60" class="d-inline-block align-text-top" onmouseover="over(this)" onmouseout="out(this)">
-            </a>
-            <a class="navbar-brand" href="http://127.0.0.1:5500">홈페이지 테스트</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="https://www.leagueoflegends.com/ko-kr/" target="_blank">메인페이지</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">기본정보</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">챔피언</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">패치노트</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">새소식</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    고객지원
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="https://www.leagueoflegends.com/ko-kr/download/" target="_blank">게임 다운로드</a></li>
-                    <li><a class="dropdown-item" href="https://www.leagueoflegends.com/ko-kr/news/community/" target="_blank">롤 커뮤니티</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="https://github.com/heungkukyee?tab=repositories" target="">깃허브 페이지</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="d-flex" role="search" onsubmit="return googleSearch();"> <!--onsubmit 추가-->
-                <input class="form-control me-2" id="search_input" name="q" type="search" placeholder="입력" aria-label="Search"> <!--코드 추가-->
-                <button class="btn btn-outline-light" id="search_button_msg" type="submit">검색</button> <!--id="search_btn 추가"-->
-              </form>
-              
-            </div>
-            
-          </div>
-          <a href="login/login.html" class="btn btn-outline-light" id="login_btn">로그인</a> <!--로그인 버튼 추가-->
-        </nav>
         </div>
         
         <hr>
