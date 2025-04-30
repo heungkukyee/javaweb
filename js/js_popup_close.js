@@ -1,8 +1,8 @@
 var close_time;
-var close_time2 = 10;
+var close_time2 = 50;
 
 clearTimeout(close_time);
-close_time= setTimeout("close_window()", 10000);
+close_time= setTimeout("close_window()", 50000);
 show_time();
 
 function show_time(){
