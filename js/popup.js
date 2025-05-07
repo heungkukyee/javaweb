@@ -1,13 +1,3 @@
-function setCookie(name, value, expiredays) {
-    var date = new Date();
-    date.setDate(date.getDate() + expiredays);
-    document.cookie = escape(name) + "=" + escape(value) 
-    + "; expires=" 
-    + date.toUTCString() 
-    + "; path=/" 
-    + "; SameSite=None; Secure";
-}
-
 function pop_up() {
   var cookieCheck = getCookie("popupYN");
   if (cookieCheck != "N") {
@@ -18,6 +8,16 @@ function pop_up() {
     );
     // ../ = 상위폴더, top, left는 위치
   }
+}
+
+function setCookie(name, value, expiredays) {
+    var date = new Date();
+    date.setDate(date.getDate() + expiredays);
+    document.cookie = escape(name) + "=" + escape(value) 
+    + "; expires=" 
+    + date.toUTCString() 
+    + "; path=/" 
+    + "; SameSite=None; Secure";
 }
 
 function getCookie(name) {
