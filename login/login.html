@@ -12,7 +12,7 @@
         <!-- DOM purify 적용 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.5/purify.min.js" integrity="sha512-/CUtA84sWWqWEBejNrrtWa7Yc4cth3Ome2ymvCKOo9YcZ4sh98tndUy4LutE2xGcAgD4fyz16y+gSyJdGCB5ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- js 연동 -->
-        <script type="text/javascript" defer src="../js/js_login.js"></script>
+        <script type="text/javascript" defer src="../js/login.js"></script>
         <!-- css 추가 -->
         <link rel="stylesheet" href="../css/login.css">
     </head>
@@ -30,19 +30,25 @@
                 <form method="get" action="/login/index_login.html" id="login_form"> <!-- id="loginForm" 추가-->
                 
                     <h2 class="fw-bold mb-2 text-uppercase">로그인 화면</h2>
-                    <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                    <p class="text-white-50 mb-5">이메일과 비밀번호를 입력하세요</p>
                 
                     <div data-mdb-input-init class="form-outline form-white mb-4">
                         <input type="email" id="typeEmailX" class="form-control form-control-lg" name="id" />
-                        <label class="form-label" for="typeEmailX">Email</label>
+                        <label class="form-label" for="typeEmailX">이메일</label>
                     </div>
                 
                     <div data-mdb-input-init class="form-outline form-white mb-4">
                         <input type="password" id="typePasswordX" class="form-control form-control-lg" name="password" />
-                        <label class="form-label" for="typePasswordX">Password</label>
+                        <label class="form-label" for="typePasswordX">비밀번호</label>
                     </div>
                 
                     <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+
+                    <div class="checkbox mb-3">
+                        <label>
+                        <input type="checkbox" value="remember-me" id="idSaveCheck"> 아이디 기억
+                       </label>
+                        </div>
                 
                     <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" id="login_btn"type="button">로그인</button>
                     <!-- type="button으로 수정" -->
