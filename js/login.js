@@ -60,7 +60,7 @@ function setCookie(name, value, expiredays) {
     "; SameSite=None; Secure";
 }
 
-// 10주차 연습문제 1 (로그인, 로그아웃 쿠키 카운트)
+// 10주차 응용 문제 (로그인, 로그아웃 쿠키 카운트)
 const login_count = () => {
   let loginCount = Number(getCookie("login_cnt")) || 0; 
   //쿠키 없을 때 NaN으로 리턴하는 오류 때문에 or 0 으로 기본값 설정
@@ -76,6 +76,21 @@ const logout_count = () => {
   // 쿠키 다시 저장
   setCookie("logout_cnt", logoutCount, 1);
   console.log(`현재 로그아웃 횟수: ${logoutCount}`);
+};
+
+// 10주차 연습 문제(로그인 실패 카운트 및 로그인 제한)
+const login_failed = () => {
+  let failedCount = Number(getCookie("failed_cnt")) || 0;
+  failedCount += 1;
+  setCookie("failed_cnt", failedCount, 1);
+  console.log(`현재 로그인 실패 횟수: ${failedCount}`);
+
+  if(failedCount>3){
+    alert("로그인 3회 실패! 로그인이 제한됩니다.");
+    const btn = document.getElementById("login_btn"); // btn이라는 새 변수에 login_btn 클릭 이벤트 할당
+    if (btn) btn.disabled = true; // 로그인 버튼 비활성화
+    return false; // submit 막기
+  }
 };
 
 const check_input = () => {
@@ -105,20 +120,24 @@ const check_input = () => {
 
   if (emailValue === "") {
     alert("이메일을 입력하세요.");
+    login_failed(); // 로그인 실패 함수 추가
     return false;
   }
   if (passwordValue === "") {
     alert("비밀번호를 입력하세요.");
+    login_failed(); // 로그인 실패 함수 추가
     return false;
   }
 
-  // 9주차 응용 문제 풀이(로그인 입력 길이 제한 변경)
+  // 9주차 응용 문제 (로그인 입력 길이 제한 변경)
   if (emailValue.length < 10) {
     alert("아이디는 최소 10글자 이상 입력해야 합니다.");
+    login_failed(); // 로그인 실패 함수 추가
     return false;
   }
   if (passwordValue.length < 15) {
     alert("비밀번호는 반드시 15글자 이상 입력해야 합니다.");
+    login_failed(); // 로그인 실패 함수 추가
     return false;
   }
 
@@ -126,24 +145,28 @@ const check_input = () => {
     passwordValue.match(/[!,@#$%^&*()_+\=\[\]{};':"\\|,.<>\/?]+/) !== null;
   if (!hasSpecialChar) {
     alert("패스워드는 특수문자를 1개 이상 포함해야 합니다.");
+    login_failed(); // 로그인 실패 함수 추가
     return false;
   }
   const hasUpperCase = passwordValue.match(/[A-Z]+/) !== null;
   const hasLowerCase = passwordValue.match(/[a-z]+/) !== null;
   if (!hasUpperCase || !hasLowerCase) {
     alert("패스워드는 대소문자를 1개 이상 포함해야 합니다.");
+    login_failed(); // 로그인 실패 함수 추가
     return false;
   }
 
-  // 9주차 응용 문제 풀이2 (패턴식을 이용해 반복 입력 금지하기)
+  // 9주차 연습 문제 (패턴식을 이용해 반복 입력 금지하기)
   const repeatmore3 = /(.{3,})\1/;
   const repeaagain2 = /(\d{2}).*?\1/;
   if (repeatmore3.test(emailValue)) {
     alert("3글자 이상 반복 입력할 수 없습니다.");
+    login_failed(); // 로그인 실패 함수 추가
     return false;
   }
   if (repeaagain2.test(emailValue)) {
     alert("연속되는 숫자를 2개 이상 반복할 수 없습니다.");
+    login_failed(); // 로그인 실패 함수 추가
     return false;
   }
 
