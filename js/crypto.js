@@ -30,6 +30,5 @@ function decrypt_text() {
   const rk = k.padEnd(32, " "); // AES256은 key 길이가 32
   const eb = session_get();
   const b = this.decodeByAES256(rk, eb); // 실제 복호화
-  console.log(b);
+  console.log("CBC 복호화:", b);
 }
-   

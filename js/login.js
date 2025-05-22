@@ -12,6 +12,7 @@ function init() { // 로그인 폼에 쿠키에서 가져온 아이디 입력
 function init_logined() {
   if (sessionStorage) {
     decrypt_text(); // 복호화 함수
+    decrypt_text_gcm("key");
   } else {
     alert("세션 스토리지 지원 x");
   }
@@ -93,7 +94,7 @@ const login_failed = () => {
   }
 };
 
-const check_input = () => {
+const check_input = async () => { // 11주차 응용 문제 해결 때문에 async 추가(밑에서 await 사용하기 위해서)
   const loginForm = document.getElementById("login_form");
   const loginBtn = document.getElementById("login_btn");
   const emailInput = document.getElementById("typeEmailX");
@@ -194,6 +195,11 @@ const check_input = () => {
   console.log("비밀번호:", passwordValue);
   session_set(); // 세션 생성
   localStorage.setItem('jwt_token', jwtToken);
+
+  // 11주차 응용 문제 
+  await encrypt_text_gcm("key", passwordValue); // 암호화
+  await decrypt_text_gcm("key"); // 복호화
+
   loginForm.submit();
 };
 
