@@ -59,10 +59,13 @@ function session_check() { //세션 검사
 } */
 
 // 로그아웃 시 세션 삭제 안 되는 오류 해결 위해 id와 pass로 같이 변경
-function session_del() { //세션 삭제
+function session_del() { // 세션 삭제
   if (sessionStorage) {
     sessionStorage.removeItem("Session_Storage_id");
     sessionStorage.removeItem("Session_Storage_pass");
+    // 세션 삭제 시 11주차 응용 문제 세션 같이 삭제
+    sessionStorage.removeItem("Session_Storage_pass2");
+    sessionStorage.removeItem("Session_Storage_iv");
     
     alert("로그아웃 버튼 클릭 확인 : 세션 스토리지를 삭제합니다.");
   } else {

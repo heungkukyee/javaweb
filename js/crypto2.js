@@ -1,4 +1,4 @@
-// 11주차 응용 문제()
+// 11주차 응용 문제(실습 결과와 다르게 Session_Storage_iv도 Session에 출력)
 
 // 텍스트 인코더/디코더
 const enc = new TextEncoder();
