@@ -5,7 +5,7 @@ const enc = new TextEncoder();
 const dec = new TextDecoder();
 
 // GCM용 키 생성 함수
-async function getKeyFromPassword(password) {
+export async function getKeyFromPassword(password) {
   const baseKey = await crypto.subtle.importKey(
     "raw",
     enc.encode(password),
@@ -32,7 +32,7 @@ async function getKeyFromPassword(password) {
 }
 
 // 암호화 함수 - Session_Storage_pass2, Session_Storage_iv에 저장
-async function encrypt_text_gcm(password, plainText) {
+export async function encrypt_text_gcm(password, plainText) {
   const key = await getKeyFromPassword(password);
   const iv = crypto.getRandomValues(new Uint8Array(12)); // GCM용 IV는 12바이트
 
@@ -56,7 +56,7 @@ async function encrypt_text_gcm(password, plainText) {
 }
 
 // 복호화 함수(console에 출력)
-async function decrypt_text_gcm(password) {
+export async function decrypt_text_gcm(password) {
   const encryptedBase64 = sessionStorage.getItem("Session_Storage_pass2");
   const ivBase64 = sessionStorage.getItem("Session_Storage_iv");
 

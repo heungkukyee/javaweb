@@ -3,7 +3,7 @@ import { encrypt_text, decrypt_text } from './crypto.js';
 import { getKeyFromPassword, encrypt_text_gcm, decrypt_text_gcm } from './crypto2.js';
 import { generateJWT, checkAuth } from './token.js';
 
-function init() { // 로그인 폼에 쿠키에서 가져온 아이디 입력
+/* function init() { // 로그인 폼에 쿠키에서 가져온 아이디 입력
   const emailInput = document.getElementById("typeEmailX");
   const idsave_check = document.getElementById("idSaveCheck");
   let get_id = getCookie("id");
@@ -12,10 +12,11 @@ function init() { // 로그인 폼에 쿠키에서 가져온 아이디 입력
     idsave_check.checked = true;
   }
   session_check(); // 세션 유무 검사
-}
+} */
 
 document.addEventListener("DOMContentLoaded", () => {
-  init();
+  checkAuth();
+  init_logined();
 });
 
 function init_logined() {
