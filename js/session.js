@@ -42,6 +42,16 @@ export async function session_set() { //세션 저장(객체)
   }
 }
 
+export async function session_set2() { //세션 저장(객체)
+  if (sessionStorage) {
+    const objString = JSON.stringify(obj); // 객체-> JSON 문자열 변환
+    // let en_text = await encrypt_text(objString); // 암호화
+    sessionStorage.setItem("Session_Storage_join", objString);
+  } else {
+    alert("세션 스토리지 지원 x");
+  }
+}
+
 /* function session_get() { //세션 읽기
   if (sessionStorage) {
     return sessionStorage.getItem("Session_Storage_test");
