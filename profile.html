@@ -21,7 +21,7 @@
         <script type="text/javascript" defer src="../js/token.js"></script>
         <script type="text/javascript" defer src="../js/crypto2.js"></script> -->
         <!-- css 연동 -->
-         <link rel="stylesheet" href="./css/profile.css">
+        <link rel="stylesheet" href="./css/profile.css">
         <!-- crypto-js 연동 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>       
         <!--bootsrap-->
@@ -103,7 +103,7 @@
                         </nav>
                     </div>
                 </div>
-
+    
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="card mb-4">
@@ -274,6 +274,10 @@
                                 </div>
                                 <br>
                             </div>
+                            <div class="hAddr">
+                                <span class="title">지도중심기준 행정동 주소정보</span>
+                                <span id="centerAddr"></span>
+                            </div>
                         </div>
                     </div>
                     <div class="map_wrap">
@@ -282,7 +286,7 @@
                             <div class="option">
                                 <div>
                                     <form onsubmit="searchPlaces(); return false;">
-                                        키워드 : <input type="text" value="성결대학교 성결관" id="keyword" size="15">
+                                        키워드 : <input type="text" value="모란 맛집" id="keyword" size="15">
                                         <button type="submit">검색하기</button>
                                     </form>
                                 </div>
@@ -297,9 +301,9 @@
                 </div>
             </div>
         </section>
-
+    
         <hr>
-
+    
         <div class="container-fluid" style="display: flex; justify-content: center;">
             <h3 style="font-size: 24px; font-weight: bold; font-style: italic; color: black; font-family: '굴림';">
                 프로필 페이지</h3>
