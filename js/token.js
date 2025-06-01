@@ -64,8 +64,8 @@ export function checkAuth() { // 인증 검사 수행
   }
 }
 
-// 11주차 연습 문제
-function jwt_token_del() { //토큰 삭제
+// 11주차 연습 문제(모듈화 연동으로 export 추가)
+export function jwt_token_del() { //토큰 삭제
   if (localStorage) {
     localStorage.removeItem("jwt_token");
     alert("로그아웃 버튼 클릭 확인 : 토큰을 삭제합니다.");

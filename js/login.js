@@ -1,7 +1,8 @@
 import { session_set, session_get, session_check } from './session.js';
 import { encrypt_text, decrypt_text } from './crypto.js';
 import { getKeyFromPassword, encrypt_text_gcm, decrypt_text_gcm } from './crypto2.js';
-import { generateJWT, checkAuth } from './token.js';
+// 11주차 연습문자 jwt_token_del 모듈화 연동
+import { generateJWT, checkAuth, jwt_token_del } from './token.js';
 
 function init() { // 로그인 폼에 쿠키에서 가져온 아이디 입력
   const emailInput = document.getElementById("typeEmailX");

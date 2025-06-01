@@ -1,4 +1,6 @@
- import { encrypt_text, decrypt_text } from './crypto.js';
+import { encrypt_text, decrypt_text } from './crypto.js';
+// 11주차 연습 문제 jwt_token_del 모듈화 연동
+import { jwt_token_del } from './token.js'; 
 
 /* function session_set() {  //세션 저장
   let session_id = document.querySelector("#typeEmailX");
