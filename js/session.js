@@ -86,6 +86,14 @@ export function session_check() { //세션 검사
   }
 }
 
+// 13주차 응용문제 프로필 페이지 접근 제한
+export function session_check_profile() { //세션 검사
+  if (!sessionStorage.getItem("Session_Storage_id")) {
+    alert("로그인 후 이용해주세요.");
+    location.href = "../login/login.html"; // 로그인 페이지로 이동
+  } 
+}
+
 // 로그아웃 시 세션 삭제 안 되는 오류 해결 위해 id와 pass로 같이 변경
 function session_del() { // 세션 삭제
   if (sessionStorage) {

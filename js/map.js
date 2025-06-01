@@ -1,3 +1,11 @@
+import { session_check_profile } from "./session.js";
+
+window.onload = () => {
+    console.log("실행됨")
+  session_check_profile();
+};
+
+
 // 마커를 담을 배열입니다
 var markers = [];
 
