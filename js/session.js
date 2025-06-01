@@ -44,9 +44,9 @@ export async function session_set() { //세션 저장(객체)
   }
 }
 
-export async function session_set2() { //세션 저장(객체)
+export async function session_set2(obj) { //세션 저장(객체)
   if (sessionStorage) {
-    const objString = JSON.stringify(obj); // 객체-> JSON 문자열 변환
+    const objString = JSON.stringify(obj.getUserInfo()); // 객체-> JSON 문자열 변환
     // let en_text = await encrypt_text(objString); // 암호화
     sessionStorage.setItem("Session_Storage_join", objString);
   } else {
