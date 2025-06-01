@@ -168,13 +168,13 @@ const check_input = async () => { // 11주차 응용 문제 해결 때문에 asy
 
   // 9주차 연습 문제 (패턴식을 이용해 반복 입력 금지하기)
   const repeatmore3 = /(.{3,})\1/;
-  const repeaagain2 = /(\d{2}).*?\1/;
+  const repeatagain2 = /(\d{2}).*?\1/;
   if (repeatmore3.test(emailValue)) {
     alert("3글자 이상 반복 입력할 수 없습니다.");
     login_failed(); // 로그인 실패 함수 추가
     return false;
   }
-  if (repeaagain2.test(emailValue)) {
+  if (repeatagain2.test(emailValue)) {
     alert("연속되는 숫자를 2개 이상 반복할 수 없습니다.");
     login_failed(); // 로그인 실패 함수 추가
     return false;
