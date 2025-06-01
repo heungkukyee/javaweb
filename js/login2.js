@@ -1,5 +1,6 @@
 import { session_set, session_get, session_check } from './session.js';
-import { encrypt_text, decrypt_text } from './crypto.js';
+// 12주차 연습문제 회원가입 복호화 모듈 추가
+import { encrypt_text, decrypt_text, decrypt_text_join } from './crypto.js';
 import { getKeyFromPassword, encrypt_text_gcm, decrypt_text_gcm } from './crypto2.js';
 import { generateJWT, checkAuth } from './token.js';
 
@@ -23,6 +24,7 @@ function init_logined() {
   if (sessionStorage) {
     decrypt_text(); // 복호화 함수
     decrypt_text_gcm("key");
+    decrypt_text_join("key");
   } else {
     alert("세션 스토리지 지원 x");
   }

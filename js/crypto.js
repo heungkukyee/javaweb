@@ -1,4 +1,4 @@
-import { session_set, session_get, session_check } from './session.js';
+import { session_set, session_get, session_check, session_get2} from './session.js';
 
 function encodeByAES256(key, data) {
   const cipher = CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(key), {
@@ -33,4 +33,24 @@ export function decrypt_text() {
   const eb = session_get();
   const b = decodeByAES256(rk, eb); // 실제 복호화
   console.log("CBC 복호화:", b);
+}
+
+// 12주차 연습문제 회원가입 정보 암호화
+export function encrypt_text_join(userObj) {
+  const k = "key"; // 클라이언트 키
+  const rk = k.padEnd(32, " "); // AES256은 key 길이가 32
+  const jsonStr = JSON.stringify(userObj); // 객체를 JSON 문자열로 변환
+  const eb = encodeByAES256(rk, jsonStr); // 문자열 암호화
+  return eb;
+}
+
+// 12주차 연습문제 회원가입 정보 복호화
+export function decrypt_text_join() {
+  const k = "key"; // 서버의 키
+  const rk = k.padEnd(32, " "); // AES256은 key 길이가 32
+  const eb = session_get2(); // session_get2() 불러오기
+  const decrypted = decodeByAES256(rk, eb); // 실제 복호화
+  const parsed = JSON.parse(decrypted);
+
+  console.log("복호화된 회원정보: ", parsed);
 }
