@@ -49,6 +49,13 @@ export function decrypt_text_join() {
   const k = "key"; // 서버의 키
   const rk = k.padEnd(32, " "); // AES256은 key 길이가 32
   const eb = session_get2(); // session_get2() 불러오기
+
+  // 회원가입 세션이 없다면 복호화 X
+  if (!eb) {
+    console.log("회원가입 정보가 없어 복호화하지 않습니다.");
+    return;
+  }
+
   const decrypted = decodeByAES256(rk, eb); // 실제 복호화
   const parsed = JSON.parse(decrypted);
 
