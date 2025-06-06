@@ -46,19 +46,19 @@ const check_xss = (input) => {
 };
 
 function getCookie(name) {
-    var cookie = document.cookie;
-    console.log("쿠키를 요청합니다.");
-    if (cookie != "") {
-      var cookie_array = cookie.split("; ");
-      for (var index in cookie_array) {
-        var cookie_name = cookie_array[index].split("=");
-        if (cookie_name[0] == name) { //쿠키를 id에서 name으로 변경
-          return cookie_name[1];
-        }
+  var cookie = document.cookie;
+  console.log("쿠키를 요청합니다.");
+  if (cookie != "") {
+    var cookie_array = cookie.split("; ");
+    for (var index in cookie_array) {
+      var cookie_name = cookie_array[index].split("=");
+      if (cookie_name[0] == name) { //쿠키를 id에서 name으로 변경
+        return cookie_name[1];
       }
     }
-    return;
   }
+  return;
+}
 
 function setCookie(name, value, expiredays) {
   var date = new Date();
@@ -106,7 +106,8 @@ const login_failed = () => {
   }
 };
 
-const check_input = async () => { // 11주차 응용 문제 해결 때문에 async 추가(밑에서 await 사용하기 위해서)
+const check_input = async () => {
+  // 11주차 응용 문제 해결 때문에 async 추가(밑에서 await 사용하기 위해서)
   const loginForm = document.getElementById("login_form");
   const loginBtn = document.getElementById("login_btn");
   const emailInput = document.getElementById("typeEmailX");
@@ -206,9 +207,9 @@ const check_input = async () => { // 11주차 응용 문제 해결 때문에 asy
   console.log("이메일:", emailValue);
   console.log("비밀번호:", passwordValue);
   session_set(); // 세션 생성
-  localStorage.setItem('jwt_token', jwtToken);
+  localStorage.setItem("jwt_token", jwtToken);
 
-  // 11주차 응용 문제 
+  // 11주차 응용 문제
   await encrypt_text_gcm("key", passwordValue); // 암호화
   await decrypt_text_gcm("key"); // 복호화
 
@@ -218,8 +219,8 @@ const check_input = async () => { // 11주차 응용 문제 해결 때문에 asy
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("login_btn");
   if (btn) {
-    btn.addEventListener("click", check_input);     // 로그인 입력 확인 및 암호화
-    btn.addEventListener("click", login_count);     // 로그인 카운트 증가
-    btn.addEventListener("click", logout_count);    // 로그아웃 카운트 증가
+    btn.addEventListener("click", check_input); // 로그인 입력 확인 및 암호화
+    btn.addEventListener("click", login_count); // 로그인 카운트 증가
+    btn.addEventListener("click", logout_count); // 로그아웃 카운트 증가
   }
 });

@@ -102,6 +102,8 @@ function session_del() { // 세션 삭제
     // 세션 삭제 시 11주차 응용 문제 세션 같이 삭제
     sessionStorage.removeItem("Session_Storage_pass2");
     sessionStorage.removeItem("Session_Storage_iv");
+    // Session_Storage_object 삭제 추가 구현
+    sessionStorage.removeItem("Session_Storage_object");
     
     alert("로그아웃 버튼 클릭 확인 : 세션 스토리지를 삭제합니다.");
   } else {
@@ -117,6 +119,7 @@ function logout() {
 
 // document.getElementById("logout_btn").addEventListener("click", logout);
 
+// 로그인 화면에서 로그아웃 버튼이 없어서 생기는 오류 수정
 document.addEventListener("DOMContentLoaded", () => {
   const logoutBtn = document.getElementById("logout_btn");
   if (logoutBtn) {

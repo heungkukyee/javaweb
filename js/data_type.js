@@ -34,13 +34,14 @@ users.set("user1", {
 //user1은 key, {}안은 value
 
 users.set("user2", {
-    id: 2, password: "password456"
+  id: 2,
+  password: "password456",
 });
 
 //[key, value] 순서로 꺼내기
-for (const[username, user] of users) {
-    console.log(`사용자 이름: ${username}`, `ID: ${user.id}`);
-    console.log(`비밀번호: ${user.password}`);
+for (const [username, user] of users) {
+  console.log(`사용자 이름: ${username}`, `ID: ${user.id}`);
+  console.log(`비밀번호: ${user.password}`);
 }
 
 //Set 객체 생성, 이름 저장
@@ -51,5 +52,5 @@ usernames.add("user2");
 
 //Set 객체의 모든 사용자 이름 반복 출력
 for (const username of usernames) {
-console.log(`사용자 이름: ${username}`);
+  console.log(`사용자 이름: ${username}`);
 }

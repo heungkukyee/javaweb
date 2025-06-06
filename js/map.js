@@ -1,7 +1,7 @@
 import { session_check_profile } from "./session.js";
 
 window.onload = () => {
-    console.log("실행됨")
+  console.log("실행됨");
   session_check_profile();
 };
 

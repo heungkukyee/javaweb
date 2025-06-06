@@ -38,27 +38,27 @@ function googleSearch(){
 
 //5주차 연습문제 코드
 function googleSearch() {
-    const searchTerm = document.getElementById("search_input").value.trim(); // .trim 검색어 공백 제거
-    const badwords = ["욕1", "욕2", "욕3", "욕4", "욕5"]; //비속어 구분
+  const searchTerm = document.getElementById("search_input").value.trim(); // .trim 검색어 공백 제거
+  const badwords = ["욕1", "욕2", "욕3", "욕4", "욕5"]; //비속어 구분
 
-    //공백 문자열 검사
-    if (searchTerm.length == 0) {
-        alert("검색창이 비었습니다.");
-        return false;
-    }
-
-    //비속어 검사
-    for (let i = 0; i < badwords.length; i++) {
-        if (searchTerm.includes(badwords[i])) {
-            alert("비속어가 포함되어 있습니다.");
-            return false;
-        }
-    }
-
-    //검색 수행
-    const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(searchTerm)}`;
-    window.open(googleSearchUrl, "_blank");
+  //공백 문자열 검사
+  if (searchTerm.length == 0) {
+    alert("검색창이 비었습니다.");
     return false;
-}
-    
-    
+  }
+
+  //비속어 검사
+  for (let i = 0; i < badwords.length; i++) {
+    if (searchTerm.includes(badwords[i])) {
+      alert("비속어가 포함되어 있습니다.");
+      return false;
+    }
+  }
+
+  //검색 수행
+  const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(
+    searchTerm
+  )}`;
+  window.open(googleSearchUrl, "_blank");
+  return false;
+}  

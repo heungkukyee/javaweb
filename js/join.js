@@ -1,6 +1,7 @@
 import { session_set2 } from "./session.js";
 
-function join() { // 회원가입 기능;
+function join() {
+  // 회원가입 기능;
   const nameRegex = /^[가-힣]+$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const pwRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
@@ -36,6 +37,7 @@ function join() { // 회원가입 기능;
     email.focus();
     return;
   }
+
   if (!pwRegex.test(password.value)) {
     // 비밀번호 검사
     alert(
